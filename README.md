@@ -1,5 +1,7 @@
 # Prosjekt_Python
-Prosjektoppgave i DAT800, fag tatt ved studie på HVL. Mer kan legges til etterhvert som vi blir smartere.
+Prosjektoppgave i DAT800, fag tatt ved studie på HVL. Mer kan legges til etterhvert som vi blir smartere. Trykk på edit eller raw for å se bedre visning.
+
+
 
 project/
 │
