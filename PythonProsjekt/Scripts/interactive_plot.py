@@ -22,20 +22,25 @@ min_year = int(data['Year'].min())
 max_year = int(data['Year'].max())
 
 
-# Layout apo
+# Layout app
 app.layout = html.Div([
     html.H1("CO₂-utslipp i Norge per drivstofftype"),
-    dcc.RangeSlider(
-        id='year-slider',
-        min=min_year,
-        max=max_year,
-        step=1,
-        value=[min_year, max_year],
-        marks={str(year): str(year) for year in range(min_year, max_year+1, 5)}
-    ),
-    html.Div(id='output-container'),
-    html.Img(id='line-plot', style={'width': '80%'})
+    
+    # Container for graf og slider
+    html.Div([
+        html.Img(id='line-plot', style={'width': '97%', 'display': 'block', 'margin': '0 auto'}),
+        dcc.RangeSlider(
+            id='year-slider',
+            min=min_year,
+            max=max_year,
+            step=1,
+            value=[min_year, max_year],
+            marks = {str(year): str(year) for year in [1750, 1800, 1850, 1900, 1950, 2000, 2023]},
+            tooltip={"placement": "bottom", "always_visible": True},
+        )
+    ], style={'width': '80%', 'margin': '0 auto'})  # Samme bredde som grafen
 ])
+
 
 
 # Callback for å oppdatere grafen dynamisk
